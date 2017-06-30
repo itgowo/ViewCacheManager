@@ -21,8 +21,11 @@ CSDN:http://blog.csdn.net/hnsugar
 GitHub:https://github.com/hnsugar
 
 个人做测试项目的服务器:
+
 http://lujianchao.com 
+
 http://itgowo.com 
+
 ##原理
 
 ViewGroup添加View用addView()方法，当添加到viewgroup里后，viewgroup自身维护了childView（子View），通过getChildCount()和getChildAt()可以实现遍历和拿到指定childview。
@@ -41,8 +44,11 @@ ViewGroup添加View用addView()方法，当添加到viewgroup里后，viewgroup�
  7. 处理完成；
 
 ##使用方法（完整代码贴后边了）
+
 ####说明
+
 rootview 指布局里的gridlayout；mManager指ViewCacheManager的对象；图片为网络图片，使用glide4.0加载；itemview就是gridlayout的childView，itemview就是一个添加了imageview和textview的LinearLayout；效果如图；使用的是我开发的工具箱制作的屏幕Gif录像，Json视图解析，各种编码，二维码等等一堆我需要用的功能（广告）
+
 [存在Github上的开发工具箱下载地址](https://github.com/hnsugar/QKTool)
 
 ![这里写图片描述](https://github.com/hnsugar/ViewCacheManager/raw/master/1.gif)
@@ -84,6 +90,7 @@ rootview 指布局里的gridlayout；mManager指ViewCacheManager的对象；图�
   
  
 ##上代码（完整）
+
 ###ViewCacheManager
 	public class ViewCacheManager<ReturnView extends ViewGroup> {
 	    private onCacheListener mOnCacheListener;
