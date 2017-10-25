@@ -41,7 +41,7 @@ public class ViewCacheManager<ReturnView extends ViewGroup> {
             mChangeValue = mViewGroup.getChildCount() - mFixedValue;
             for (int mValue = mChangeValue; mValue > 0; mValue--) {
                 mViewGroup.removeViewAt(mValue);
-                mOnCacheListener.onDelete(mViewGroup.getChildCount());
+                mOnCacheListener.onRemoveView(mViewGroup.getChildCount());
             }
         }
         //refresh
@@ -68,7 +68,7 @@ public class ViewCacheManager<ReturnView extends ViewGroup> {
          *
          * @param position view position
          */
-        public void onDelete(int position);
+        public void onRemoveView(int position);
 
         /**
          * 刷新后对view做操作
