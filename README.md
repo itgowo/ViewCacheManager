@@ -39,7 +39,7 @@ ViewGroup添加View用addView()方法，当添加到viewgroup里后，viewgroup�
  2. 执行onRefresh通知Manager有几个子View要显示;
  3. 根据数量判断增加几个或删除几个，分别回调执行onAddView()和onDeleteView();
  4. 将onAddView()返回的View加入viewgroup里，onDeleteView()只是提醒，可不处理；
- 5. childView数量达到要求后，回调onBindView(int position, ReturnView mView)将每个childView回调。
+ 5. childView数量达到要求后，回调onRemoveView(int position, ReturnView mView)将每个childView回调。
  6. 在onBindView(）回调里对childView进行设置，修改属性等；
  7. 处理完成；
 
@@ -68,7 +68,7 @@ rootview 指布局里的gridlayout；mManager指ViewCacheManager的对象；图�
 	            }
 	
 	            @Override
-	            public void onDelete(int position) {
+	            public void onRemoveView(int position) {
 	                System.out.println("删除了一个view" + position);
 	            }
 	
@@ -121,7 +121,7 @@ rootview 指布局里的gridlayout；mManager指ViewCacheManager的对象；图�
 	            mChangeValue = mViewGroup.getChildCount() - mFixedValue;
 	            for (int mValue = mChangeValue; mValue > 0; mValue--) {
 	                mViewGroup.removeViewAt(mValue);
-	                mOnCacheListener.onDelete(mViewGroup.getChildCount());
+	                mOnCacheListener.onRemoveView(mViewGroup.getChildCount());
 	            }
 	        }
 	        //refresh
@@ -148,7 +148,7 @@ rootview 指布局里的gridlayout；mManager指ViewCacheManager的对象；图�
 	         *
 	         * @param position view position
 	         */
-	        public void onDelete(int position);
+	        public void onRemoveView(int position);
 	
 	        /**
 	         * 刷新后对view做操作
@@ -252,7 +252,7 @@ rootview 指布局里的gridlayout；mManager指ViewCacheManager的对象；图�
 	            }
 	
 	            @Override
-	            public void onDelete(int position) {
+	            public void onRemoveView(int position) {
 	                System.out.println("删除了一个view" + position);
 	            }
 	
