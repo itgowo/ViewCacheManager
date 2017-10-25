@@ -92,7 +92,8 @@ rootview 指布局里的gridlayout；mManager指ViewCacheManager的对象；图�
 ##上代码（完整）
 
 ###ViewCacheManager
-	public class ViewCacheManager<ReturnView extends ViewGroup> {
+
+	  public class ViewCacheManager<ReturnView extends ViewGroup> {
 	    private onCacheListener mOnCacheListener;
 	
 	    public onCacheListener getOnCacheListener() {
